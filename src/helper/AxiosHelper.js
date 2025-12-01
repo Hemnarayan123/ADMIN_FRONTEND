@@ -4,9 +4,15 @@ import { toast } from 'react-toastify'
 const commonHeadres = () => {
     axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL;
     axios.defaults.headers.common['x-api-key'] = import.meta.env.VITE_LICENCE;
-    axios.defaults.crossDomain = true
-    axios.defaults.withCredentials = true
-}
+
+    const token = localStorage.getItem("token");
+    if (token) {
+        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    }
+
+    axios.defaults.crossDomain = true;
+    axios.defaults.withCredentials = true;
+};
 
 const CheckError = (res) => {
     if (res && res.status === 401) {

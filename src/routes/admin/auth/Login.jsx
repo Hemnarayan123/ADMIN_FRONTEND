@@ -61,6 +61,7 @@ function Login() {
                                         var { data } = await AxiosHelper.postData("admin/login", values);
                                         if (data?.status === true) {
                                             toast.success("Successfully Login..!!");
+                                            localStorage.setItem("token", data.data.token);
                                             dispatch(logdedInAdmin(data.data.user))
                                             return navigate(`/admin/dashboard`);
                                         } else {
