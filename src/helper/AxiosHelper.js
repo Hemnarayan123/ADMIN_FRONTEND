@@ -11,7 +11,7 @@ const commonHeadres = () => {
     }
 
     axios.defaults.crossDomain = true;
-    axios.defaults.withCredentials = true;
+    axios.defaults.withCredentials = false;
 };
 
 const CheckError = (res) => {
