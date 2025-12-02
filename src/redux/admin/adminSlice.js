@@ -22,6 +22,7 @@ export const adminSlice = createSlice({
         logdedInAdmin: (state, action) => {
             localStorage.setItem('type', 'admin');
             localStorage.setItem('isLogedIn', 'true');
+            localStorage.setItem('token', 'true');
 
             let { name, email, mobile, image } = action.payload;
             if (name) state.name = name;
@@ -29,8 +30,6 @@ export const adminSlice = createSlice({
             if (mobile) state.mobile = mobile;
             if (image) state.image = image;
             state.isLoggedIn = true;
-            localStorage.setItem('token', 'true');
-
         },
         logdedOutAdmin: (state) => {
             localStorage.removeItem('type');

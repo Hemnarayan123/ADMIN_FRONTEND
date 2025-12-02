@@ -6,24 +6,30 @@ import AxiosHelper from "../../../helper/AxiosHelper";
 import { toast } from "react-toastify";
 
 const Logout = () => {
-
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     useEffect(() => {
         (async () => {
-            var { data } = await AxiosHelper.getData("admin/logout");
-            if (data?.status === true) {
-                dispatch(logdedOutAdmin());
-                toast.success(data?.message);
-                return navigate(`/admin/login`);
-            } else {
-                toast.error(data?.message);
-            }
-        })()
-    }, [])
+            try {
+                const { data } = await AxiosHelper.getData("admin/logout");
 
-    return <Navigate to={`/admin/login`} replace />
-}
+                if (data?.status) {
+                    dispatch(logdedOutAdmin());
+                    toast.success(data.message);
+                } else {
+                    toast.error(data.message);
+                }
+            } catch (err) {
+                toast.error("Logout failed");
+            }
+
+            navigate("/admin/login");
+        })();
+    }, []);
+
+    return null;
+};
+
 
 export default Logout
