@@ -43,9 +43,9 @@ function Login() {
             <div className="container" data-layout="container">
                 <div className="row flex-center min-vh-100 py-6">
                     <div className="col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
-                        <Link to='/admin/dashboard' className="d-flex flex-center mb-4">
+                        <div className="d-flex flex-center mb-4">
                             <img className="me-2" src={logo} alt={application_name} style={{ width: 80, maxHeight: 80, borderRadius : 50 }} />
-                        </Link>
+                        </div>
                         <div className="card">
                             <div className="card-body p-4 p-sm-5">
                                 <div className="row flex-between-center mb-2">
