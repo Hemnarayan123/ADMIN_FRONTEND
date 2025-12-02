@@ -29,11 +29,13 @@ export const adminSlice = createSlice({
             if (mobile) state.mobile = mobile;
             if (image) state.image = image;
             state.isLoggedIn = true;
+            localStorage.setItem('token', 'true');
 
         },
         logdedOutAdmin: (state) => {
             localStorage.removeItem('type');
             localStorage.removeItem('isLogedIn');
+            localStorage.removeItem('token');
             state.name = '';
             state.email = '';
             state.mobile = '';
