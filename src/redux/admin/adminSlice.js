@@ -23,13 +23,13 @@ export const adminSlice = createSlice({
             localStorage.setItem('type', 'admin');
             localStorage.setItem('isLogedIn', 'true');
             localStorage.setItem('token', 'true');
-
             let { name, email, mobile, image } = action.payload;
             if (name) state.name = name;
             if (email) state.email = email;
             if (mobile) state.mobile = mobile;
             if (image) state.image = image;
             state.isLoggedIn = true;
+
         },
         logdedOutAdmin: (state) => {
             localStorage.removeItem('type');
