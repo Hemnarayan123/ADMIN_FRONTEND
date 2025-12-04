@@ -1,13 +1,13 @@
 import { NavDropdown } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Avatar } from "../../assets/images";
+import  avatar  from "../../assets/images/admin/avatar.png";
 
 const AvatarBox = () => {
     const { image } = useSelector(store => store.admin);
     return (
         <div className="avatar avatar-xl">
-            <img className="rounded-circle border border-primary border-2" src={image ? image : Avatar} alt="" />
+            <img className="rounded-circle border border-primary border-2" src={image ? image : avatar} alt="Avatar" />
         </div>
     )
 }

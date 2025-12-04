@@ -1,11 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { Logo, FavIcon, LogoFooter } from '../../assets/images';
 
 const initialState = {
     settings: {
-        favicon: FavIcon,
-        logo: Logo,
-        footer_logo: LogoFooter,
+        favicon: "",
+        logo: "",
+        footer_logo: "",
         application_name: "",
         copyright: "",
         meta_title: "",

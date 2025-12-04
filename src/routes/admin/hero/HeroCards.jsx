@@ -166,11 +166,13 @@ const HeroCard = () => {
                                                              <td>{row.city_name}</td>
                                                              <td>{formatDateDDMMYYYY(row.createdAt)}</td>
                                                             <td>
-                                                                {row.product_image ? (
+                                                                {row.team_image ? (
                                                                     <img
-                                                                        src={row.product_image}
-                                                                        alt={row.product_name}
-                                                                        className="w-20 h-20 object-cover rounded"
+                                                                        src={row.team_image}
+                                                                        alt={row.team_name}
+                                                                        width={60}
+                                                                        height={40}
+                                                                        
                                                                     />
                                                                 ) : (
                                                                     <span>No Image</span>
@@ -245,6 +247,11 @@ const HeroCard = () => {
                         <li className="list-group-item d-flex justify-content-between align-items-center">
                             <label className='fs--1 m-0'>Team City</label>
                             <span className="fs--1 ps-5 text-center">{initialValues?.city_name}</span>
+                        </li>
+
+                        <li className="list-group-item d-flex justify-content-between align-items-center">
+                            <label className='fs--1 m-0'>Team Image</label>
+                            <span className="fs--1 ps-5 text-center"><img src={initialValues?.team_image} alt={initialValues?.team_name} width={60} height={40} /></span>
                         </li>
 
                         <li className="list-group-item d-flex justify-content-between align-items-center">
