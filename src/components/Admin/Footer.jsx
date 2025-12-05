@@ -14,9 +14,9 @@ const Footer = () => {
                 </div>
                 <div className="col-12 col-sm-auto text-center">
                     <p className="mb-0 text-600">
-                        Delvelop By :{" "}
+                        Developed By :{" "}
                         <a href="https://" target="google.com_blank">
-                           Hemnarayan
+                           MistiSports
                         </a>
                     </p>
                 </div>
