@@ -12,7 +12,7 @@ const MySwal = withReactContent(Swal);
 
 
 const Enquiry = () => {
-    const tableHeaders = ['S.No', 'Job Title', 'Full Name', 'Email', 'Phone', 'Service', 'Schedule']
+    const tableHeaders = ['S.No', 'Full Name', 'Email', 'Message']
     const [data, setData] = useState({ count: 0, record: [], totalPages: 0, pagination: [] });
     const [param, setParam] = useState({ limit: 7, pageNo: 1, query: "" })
     const [open, setOpen] = useState(null);
@@ -90,11 +90,10 @@ const Enquiry = () => {
                         {data?.record && data?.record.map((customer, index) => (
                             <tr key={index} className="text-center">
                                 <td>{index + 1}</td>
-                                <td>{customer.jobTitle}</td>
+                               
                                 <td>{customer.fullName}</td>
                                 <td>{customer.email || 'N/A'}</td>
-                                <td>{customer.phone || 'N/A'}</td>
-                                <td>{customer.service || 'N/A'}</td>
+                                <td>{customer.message || 'N/A'}</td>
                                 <td>
                                     <div className="text-center d-flex gap-2">
                                         {customer.schedule ? (
@@ -147,16 +146,6 @@ const Enquiry = () => {
                 </div>
             </div>
         </div>
-
-
-        <Modal centered show={!!open} title={'Schedule'}>
-            <div className='d-flex justify-content-end gap-2'><CloseButton onClick={() => setOpen(null)} /></div>
-            <div className='p-2'>
-                <p>Date: {new Date(initialValues.schedule.date).toLocaleDateString() || 'N/A'}</p>
-                <p>Time: {initialValues.schedule.time || 'N/A'}</p>
-                <p>Time Zone: {initialValues.schedule.timeZone || 'N/A'}</p>
-            </div>
-        </Modal>
     </>
 }
 
