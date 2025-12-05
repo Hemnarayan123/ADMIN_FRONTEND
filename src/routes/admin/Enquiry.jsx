@@ -25,7 +25,7 @@ const Enquiry = () => {
     })
 
     const fetchEnquiries = useCallback(async () => {
-        const { data } = await AxiosHelper.getData(`admin/get-enquiry-filter`, param);
+        const { data } = await AxiosHelper.getData(`admin//get-user_enquery`, param);
         if (data.status) {
             let { count, totalPages, record, pagination } = data?.data
             setData({ count, totalPages, record, pagination });
