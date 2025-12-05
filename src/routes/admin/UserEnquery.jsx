@@ -83,9 +83,9 @@ const UserEnquery = () => {
                         {data?.record && data?.record.map((customer, index) => (
                             <tr key={index} className="text-center">
                                 <td>{index + 1}</td>
-                                <td>{customer.user_name}</td>
-                                <td>{customer.user_emai}</td>
-                                <td>{customer.user_message || 'N/A'}</td>
+                                <td>{customer.fullName}</td>
+                                <td>{customer.email}</td>
+                                <td>{customer.message || 'N/A'}</td>
                                 <td>
                                     <div className="text-center d-flex gap-2">
                                         {customer.schedule ? (
@@ -97,7 +97,7 @@ const UserEnquery = () => {
                                         <button className="btn btn-sm btn-danger" type="button" onClick={async () => {
                                             var { isConfirmed } = await MySwal.fire(getDeleteConfig({}))
                                             if (isConfirmed) {
-                                                const { data } = await AxiosHelper.deleteData(`admin/delete-user_enquery/${customer._id}`)
+                                                const { data } = await AxiosHelper.deleteData(`admin/delete-enquiry/${customer._id}`)
                                                 
                                                 if (data.status) {
                                                     fetchEnquiries();
